@@ -1,36 +1,26 @@
-/* Variables de color simplificadas (ajustadas para el fondo de imagen) */
 :root {
-  /* Mantendremos estos colores para el texto y los acentos */
   --navidad-red: #c0392b;     
   --navidad-green: #27ae60;   
   --navidad-white: #ffffff;   
   --navidad-bg-dark: #a52a2a; 
-  /* Fondo de tarjeta transparente para que la imagen se vea detrás */
   --navidad-card-bg: rgba(255, 255, 255, 0.85); 
 
   --font-heading: 'Poppins', sans-serif; 
   --font-body: 'Arial', sans-serif;
 }
 
-/* Importar fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
 
 
-/* Estilo general del cuerpo y la aplicación */
 #root, .App {
   width: 100vw;
   min-height: 100vh;
   
-  /* ================================================= */
-  /* === CAMBIOS PARA LA IMAGEN DE FONDO INICIAN AQUÍ == */
-  /* ================================================= */
   background-image: url('src/assets/background.png');
-  background-size: cover; /* Asegura que la imagen cubra todo el viewport */
-  background-position: center center; /* Centra la imagen */
-  background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
-  background-color: var(--navidad-bg-dark); /* Color de respaldo si la imagen falla */
-  
-  /* ================================================= */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed; 
+  background-color: var(--navidad-bg-dark);
 
   color: var(--navidad-white);
   font-family: var(--font-body);
@@ -40,7 +30,6 @@
   position: relative;
 }
 
-/* Encabezado principal */
 .App h2 {
   font-family: var(--font-heading);
   padding: 50px 0 30px 0;
@@ -49,12 +38,10 @@
   font-size: 4em;
   font-weight: 700;
   color: var(--navidad-white);
-  /* Aseguramos que el texto sea legible sobre cualquier imagen */
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.9), 3px 3px var(--navidad-green); 
   letter-spacing: 2px;
 }
 
-/* Contenedor de la cuadrícula de videos */
 .video-grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -64,9 +51,7 @@
   padding: 0 20px;
 }
 
-/* Estilo individual de la tarjeta de video */
 .video-card {
-  /* Fondo casi blanco semi-transparente para que la imagen de fondo se vea un poco, pero el contenido se lea bien */
   background-color: var(--navidad-card-bg); 
   border: 1px solid var(--navidad-bg-dark); 
   border-radius: 8px;
@@ -80,18 +65,15 @@
   overflow: hidden;
 }
 
-/* Hover sutil */
 .video-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Título de la canción */
 .video-card h3 {
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 1.3em;
-  /* Color oscuro para que el texto sea legible sobre el fondo de la tarjeta claro */
   color: #333333; 
   margin-top: 10px;
   margin-bottom: 15px;
@@ -99,7 +81,6 @@
   border-bottom: 1px solid rgba(0, 128, 0, 0.3);
 }
 
-/* Estilo del iframe */
 .video-card iframe {
   width: 100%;
   max-width: 400px;
@@ -107,28 +88,4 @@
   border-radius: 6px;
   border: 3px solid var(--navidad-green);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Media queries (se mantienen iguales) */
-@media (max-width: 992px) {
-  .video-grid-container {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-  }
-  .App h2 {
-    font-size: 3.5em;
-    padding: 40px 0 25px 0;
-  }
-}
-
-@media (max-width: 600px) {
-  .video-grid-container {
-    grid-template-columns: 1fr;
-    padding: 0 20px;
-    gap: 20px;
-  }
-  .App h2 {
-    font-size: 2.5em;
-    padding: 30px 0 20px 0;
-  }
 }
