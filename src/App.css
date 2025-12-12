@@ -1,16 +1,121 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Variables de color simplificadas */
+:root {
+  --navidad-red: #c0392b;     /* Rojo Ladrillo/Clásico de Navidad (fondo) */
+  --navidad-green: #27ae60;   /* Verde para acentos */
+  --navidad-white: #ffffff;   /* Blanco puro para el texto */
+  --navidad-bg-dark: #a52a2a; /* Rojo un poco más oscuro para sombras */
+  --navidad-card-bg: rgba(255, 255, 255, 0.9); /* Fondo de tarjeta blanco semi-transparente */
+
+  /* Fuentes simples y legibles */
+  --font-heading: 'Poppins', sans-serif; 
+  --font-body: 'Arial', sans-serif;
 }
 
+/* Importar fuentes (si las mantienes en el HTML o en otro lugar) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
 
-/* .player-wrapper {
-  width: 400px; 
-  height: 220px;
-} */
 
-.read-the-docs {
-  color: #888;
+/* Estilo general del cuerpo y la aplicación */
+#root, .App {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--navidad-red); /* Fondo Rojo Sólido */
+  color: var(--navidad-white);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Encabezado principal */
+.App h2 {
+  font-family: var(--font-heading);
+  padding: 50px 0 30px 0;
+  margin: 0;
+  text-align: center;
+  font-size: 4em;
+  font-weight: 700;
+  color: var(--navidad-white);
+  /* Sombra sutil para destacar sobre el fondo rojo */
+  text-shadow: 3px 3px var(--navidad-green); 
+  letter-spacing: 2px;
+}
+
+/* Contenedor de la cuadrícula de videos */
+.video-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* 3 columnas */
+  gap: 30px; 
+  max-width: 1200px;
+  margin: 0px auto 60px auto; 
+  padding: 0 20px;
+}
+
+/* Estilo individual de la tarjeta de video */
+.video-card {
+  /* Fondo casi blanco para un contraste limpio sobre el rojo */
+  background-color: var(--navidad-card-bg); 
+  border: 1px solid var(--navidad-bg-dark); 
+  border-radius: 8px; /* Bordes sutiles */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+/* Hover sutil: ligera elevación sin exageración */
+.video-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Título de la canción */
+.video-card h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.3em;
+  color: var(--navidad-bg-dark); /* Texto oscuro para que se lea sobre el fondo claro de la tarjeta */
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(0, 128, 0, 0.3); /* Línea verde sutil */
+}
+
+/* Estilo del iframe (el reproductor de YouTube) */
+.video-card iframe {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  border: 3px solid var(--navidad-green); /* Borde verde festivo */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Media queries para responsividad */
+@media (max-width: 992px) {
+  .video-grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  .App h2 {
+    font-size: 3.5em;
+    padding: 40px 0 25px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-grid-container {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    gap: 20px;
+  }
+  .App h2 {
+    font-size: 2.5em;
+    padding: 30px 0 20px 0;
+  }
 }
