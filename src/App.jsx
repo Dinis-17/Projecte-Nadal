@@ -34,12 +34,12 @@ function App() {
     },
     {
       id: 7,
-      title: 'Peces en el río',
+      title: 'La Falu en el río',
       url: 'https://www.youtube.com/embed/bx6kO3EtmK0',
     },
     {
       id: 8,
-      title: 'Feliz Navidad - Arcangel',
+      title: 'Feliz Navidad Falu',
       url: 'https://www.youtube.com/embed/cqIeWJKTKmc',
     },
     {
@@ -67,7 +67,6 @@ function App() {
       title: '25 de Desembre',
       url: 'https://www.youtube.com/embed/fdXf5-z19Bw',
     },
-
   ];
 
   return (
