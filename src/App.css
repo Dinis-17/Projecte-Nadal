@@ -1,17 +1,18 @@
-/* Variables de color simplificadas */
+/* Variables de color simplificadas (ajustadas para el fondo de imagen) */
 :root {
-  --navidad-red: #c0392b;     /* Rojo Ladrillo/Clásico de Navidad (fondo) */
-  --navidad-green: #27ae60;   /* Verde para acentos */
-  --navidad-white: #ffffff;   /* Blanco puro para el texto */
-  --navidad-bg-dark: #a52a2a; /* Rojo un poco más oscuro para sombras */
-  --navidad-card-bg: rgba(255, 255, 255, 0.9); /* Fondo de tarjeta blanco semi-transparente */
+  /* Mantendremos estos colores para el texto y los acentos */
+  --navidad-red: #c0392b;     
+  --navidad-green: #27ae60;   
+  --navidad-white: #ffffff;   
+  --navidad-bg-dark: #a52a2a; 
+  /* Fondo de tarjeta transparente para que la imagen se vea detrás */
+  --navidad-card-bg: rgba(255, 255, 255, 0.85); 
 
-  /* Fuentes simples y legibles */
   --font-heading: 'Poppins', sans-serif; 
   --font-body: 'Arial', sans-serif;
 }
 
-/* Importar fuentes (si las mantienes en el HTML o en otro lugar) */
+/* Importar fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
 
 
@@ -19,7 +20,18 @@
 #root, .App {
   width: 100vw;
   min-height: 100vh;
-  background-color: var(--navidad-red); /* Fondo Rojo Sólido */
+  
+  /* ================================================= */
+  /* === CAMBIOS PARA LA IMAGEN DE FONDO INICIAN AQUÍ == */
+  /* ================================================= */
+  background-image: url('src/assets/background.png');
+  background-size: cover; /* Asegura que la imagen cubra todo el viewport */
+  background-position: center center; /* Centra la imagen */
+  background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+  background-color: var(--navidad-bg-dark); /* Color de respaldo si la imagen falla */
+  
+  /* ================================================= */
+
   color: var(--navidad-white);
   font-family: var(--font-body);
   margin: 0;
@@ -37,15 +49,15 @@
   font-size: 4em;
   font-weight: 700;
   color: var(--navidad-white);
-  /* Sombra sutil para destacar sobre el fondo rojo */
-  text-shadow: 3px 3px var(--navidad-green); 
+  /* Aseguramos que el texto sea legible sobre cualquier imagen */
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.9), 3px 3px var(--navidad-green); 
   letter-spacing: 2px;
 }
 
 /* Contenedor de la cuadrícula de videos */
 .video-grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* 3 columnas */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 30px; 
   max-width: 1200px;
   margin: 0px auto 60px auto; 
@@ -54,10 +66,10 @@
 
 /* Estilo individual de la tarjeta de video */
 .video-card {
-  /* Fondo casi blanco para un contraste limpio sobre el rojo */
+  /* Fondo casi blanco semi-transparente para que la imagen de fondo se vea un poco, pero el contenido se lea bien */
   background-color: var(--navidad-card-bg); 
   border: 1px solid var(--navidad-bg-dark); 
-  border-radius: 8px; /* Bordes sutiles */
+  border-radius: 8px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -68,7 +80,7 @@
   overflow: hidden;
 }
 
-/* Hover sutil: ligera elevación sin exageración */
+/* Hover sutil */
 .video-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
@@ -79,24 +91,25 @@
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 1.3em;
-  color: var(--navidad-bg-dark); /* Texto oscuro para que se lea sobre el fondo claro de la tarjeta */
+  /* Color oscuro para que el texto sea legible sobre el fondo de la tarjeta claro */
+  color: #333333; 
   margin-top: 10px;
   margin-bottom: 15px;
   padding-bottom: 5px;
-  border-bottom: 1px solid rgba(0, 128, 0, 0.3); /* Línea verde sutil */
+  border-bottom: 1px solid rgba(0, 128, 0, 0.3);
 }
 
-/* Estilo del iframe (el reproductor de YouTube) */
+/* Estilo del iframe */
 .video-card iframe {
   width: 100%;
   max-width: 400px;
   aspect-ratio: 16 / 9;
   border-radius: 6px;
-  border: 3px solid var(--navidad-green); /* Borde verde festivo */
+  border: 3px solid var(--navidad-green);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Media queries para responsividad */
+/* Media queries (se mantienen iguales) */
 @media (max-width: 992px) {
   .video-grid-container {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
