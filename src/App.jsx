@@ -20,7 +20,7 @@ function App() {
     {
       id: 4,
       title: 'Falu salchicha gordo bachicha',
-      url: 'https://www.youtube.com/embed/0QAEwP9HO7M?si=hJTou_uTMNzoNPFe'
+      url: 'https://www.youtube.com/embed/0QAEwP9HO7M?si=hJTou_uTMNzoNPFe',
     },
     {
       id: 5,
@@ -67,7 +67,93 @@ function App() {
       title: '25 de Desembre',
       url: 'https://www.youtube.com/embed/fdXf5-z19Bw',
     },
+    {
+      id: 14,
+      title: 'Feliz Navidad',
+      url: 'https://www.youtube.com/embed/TtXQk6Gq6lw',
+    },
+    {
+      id: 15,
+      title: 'Jingle Bells',
+      url: 'https://www.youtube.com/embed/3PgNPc-iFW8',
+    },
+    {
+      id: 16,
+      title: 'Santa Claus Is Coming to Town',
+      url: 'https://www.youtube.com/embed/0A8KT365wlA',
+    },
+    {
+      id: 17,
+      title: 'White Christmas',
+      url: 'https://www.youtube.com/embed/2GmZlFq0LxY',
+    },
+    {
+      id: 18,
+      title: 'Rockin Around the Christmas Tree',
+      url: 'https://www.youtube.com/embed/nXt3Z9lU5iY',
+    },
+    {
+      id: 19,
+      title: 'Do They Know It’s Christmas?',
+      url: 'https://www.youtube.com/embed/8jEnTSQStGE',
+    },
+    {
+      id: 20,
+      title: 'Let It Snow! Let It Snow! Let It Snow!',
+      url: 'https://www.youtube.com/embed/1MrJ-7j0a2M',
+    },
+    {
+      id: 21,
+      title: 'It’s Beginning to Look a Lot Like Christmas',
+      url: 'https://www.youtube.com/embed/GFh3l8fQd3E',
+    },
+    {
+      id: 22,
+      title: 'Carol of the Bells',
+      url: 'https://www.youtube.com/embed/1TFrO4i7v5Y',
+    },
+    {
+      id: 23,
+      title: 'O Holy Night',
+      url: 'https://www.youtube.com/embed/7aJp3tRZkZk',
+    },
+    {
+      id: 24,
+      title: 'Silent Night',
+      url: 'https://www.youtube.com/embed/9T4WB2zfmps',
+    },
+    {
+      id: 25,
+      title: 'Hark! The Herald Angels Sing',
+      url: 'https://www.youtube.com/embed/6xZJ5Y2b2nE',
+    },
+    {
+      id: 26,
+      title: 'Joy to the World',
+      url: 'https://www.youtube.com/embed/30OaM6b48k8',
+    },
+    {
+      id: 27,
+      title: 'We Wish You a Merry Christmas',
+      url: 'https://www.youtube.com/embed/9Uo9R0L0lYw',
+    },
+    {
+      id: 28,
+      title: 'Little Drummer Boy',
+      url: 'https://www.youtube.com/embed/qJ_MGWio-vc',
+    },
+    {
+      id: 29,
+      title: 'Deck the Halls',
+      url: 'https://www.youtube.com/embed/EXzRjV4zGqM',
+    },
+    {
+      id: 30,
+      title: 'Have Yourself a Merry Little Christmas',
+      url: 'https://www.youtube.com/embed/nY0Y0vZ4FJ4',
+    },
   ];
+
 
   return (
     <div className="App">
@@ -91,6 +177,6 @@ function App() {
       </div>
     </div>
   )
-}
+};
 
 export default App
