@@ -84,7 +84,7 @@ function App() {
 
   return (
     <div className="App">
-      <Snowfall snowflakeCount={1000}/>
+      <Snowfall snowflakeCount={300}/>
       <h2>Playlist Nadal</h2>
 
       <div className="video-grid-container">
@@ -95,7 +95,6 @@ function App() {
             <iframe
               src={video.url}
               title={video.title}
-              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
